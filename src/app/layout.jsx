@@ -1,3 +1,5 @@
+import "./globals.css";
+
 export const metadata = {
   title: "Breno — Portfolio",
   description: "Front-end Developer Portfolio",
