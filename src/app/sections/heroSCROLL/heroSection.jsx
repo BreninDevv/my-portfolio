@@ -11,7 +11,11 @@ import Comentários from "@/app/components/heroComponents/comentários";
 const HeroSection = () => {
   return (
     <>
-      <section className="bg-[#F7F4EC] min-w-screen min-h-screen p-4">
+      <section
+        className="bg-[#F7F4EC]  min-h-screen p-4 flex 
+    flex-col 
+    items-center"
+      >
         <Header />
         <LogoGod />
         <Grid />

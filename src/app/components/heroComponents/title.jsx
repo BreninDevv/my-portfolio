@@ -15,7 +15,7 @@ const Title = () => {
           <span className="font-luckiest text-gray-900">{"</>"}</span>
         </div>
         <h1 className="font-boldonse text-gray-900">WEB DEVELOPER</h1>
-        <div className="absolute right-150 top-97">
+        <div className="absolute 2xl:right-10/31 xl:right-5/18 lg:right-5/20 md:right-1/11 top-97">
           <Image src={WebDeveloper} alt="WebDeveloper" width={250} />
         </div>
       </div>
