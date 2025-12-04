@@ -5,9 +5,9 @@ import AvatarAnime from "../../assets/Avatar.png";
 const Avatar = () => {
   return (
     <>
-      <div className="flex justify-center">
-        <div className="bg-transparent border-4 border-white shadow-2xl w-36 h-36 rounded-full">
-          <Image src={AvatarAnime} alt="Avatar" className="scale-115" />
+      <div className="flex justify-center pt-20 animate-float">
+        <div className="bg-transparent border-4 border-white shadow-2xl w-36 h-36 rounded-full ">
+          <Image src={AvatarAnime} alt="Avatar" className="scale-118" />
         </div>
       </div>
     </>

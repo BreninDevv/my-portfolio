@@ -1,16 +1,12 @@
 import React from "react";
-import Image from "next/image";
-import AvatarAnime from "../../assets/Avatar.png";
-import GithubLogo from "../../assets/githubLo.png";
-import LoGod from "../../assets/LogoGod.png";
-import Grid from "../../assets/gridFundo.png";
-import LinkedinLogo from "../../assets/linkedin.png";
-import WebDeveloper from "../../assets/webDev.png";
 import Header from "@/app/components/headerComponents/Header";
 import Avatar from "@/app/components/heroComponents/avatar";
 import Title from "@/app/components/heroComponents/title";
 import LogoGod from "@/app/components/heroComponents/logoGod";
 import LinkedinGithub from "@/app/components/heroComponents/linkedinGithub";
+import Grid from "@/app/components/heroComponents/grid";
+import Seta from "@/app/components/heroComponents/seta";
+import Comentários from "@/app/components/heroComponents/comentários";
 
 const HeroSection = () => {
   return (
@@ -18,9 +14,12 @@ const HeroSection = () => {
       <section className="bg-[#F7F4EC] min-w-screen min-h-screen p-4">
         <Header />
         <LogoGod />
+        <Grid />
+        <Seta />
         <LinkedinGithub />
         <Title />
         <Avatar />
+        <Comentários />
       </section>
     </>
   );
