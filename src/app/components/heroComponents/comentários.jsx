@@ -3,7 +3,7 @@ import React from "react";
 const Comentários = () => {
   return (
     <>
-      <div className="hidden absolute xl:block lg:block md:block left-1/7 bottom-1/6 font-space text-lg hover:scale-107 duration-200">
+      <div className="hidden absolute xl:block lg:block lg:left-5 xl:left-1/7 bottom-1/6 font-space text-lg lg:text-md hover:scale-107 duration-200">
         <div className="w-90 h-70  flex flex-col">
           <div className="flex justify-start">
             <span className="text-2xl">{"<p>"}</span>
@@ -19,7 +19,7 @@ const Comentários = () => {
           </div>
         </div>
       </div>
-      <div className="absolute right-1/10 bottom-1/30 font-space text-lg hover:scale-107 duration-200">
+      <div className="hidden xl:block lg:block lg:right-5 lg:text-md absolute xl:right-1/10 bottom-1/30 font-space text-lg hover:scale-107 duration-200">
         <div className="w-90 h-70  flex flex-col">
           <div className="flex justify-start">
             <span className="text-2xl">{"<p>"}</span>
