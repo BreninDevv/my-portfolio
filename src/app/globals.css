@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Boldonse&family=Luckiest+Guy&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap");
 
 @theme {
   --font-space: "Space Mono", monospace;
   --font-bebas: "Bebas Neue", sans-serif;
   --font-boldonse: "Boldonse", system-ui;
   --font-luckiest: "Luckiest Guy", cursive;
+  --font-archivo: "Archivo Black", sans-serif;
+  --font-edu: "Edu SA Beginner", cursive;
+  --font-staat: "Staatliches", sans-serif;
+  --font-vast: "Vast Shadow", serif;
 }
 @layer float1 {
   @keyframes float {

@@ -1,3 +1,5 @@
+"use client";
+
 import "./globals.css";
 import AboutSection from "./sections/aboutSCROLL/aboutSection";
 import ContactSection from "./sections/contactSCROLL/contactSection";

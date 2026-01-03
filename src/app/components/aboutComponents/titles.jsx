@@ -9,9 +9,7 @@ const Titles = () => {
         <div className="flex justify-center ">
           <h1 className="font-boldonse text-white text-5xl">About Me</h1>
         </div>
-        <div className="absolute right-1/9 top-224">
-          <Image src={Aboutme} alt="AboutMeLogo" width={170} />
-        </div>
+        <div className="absolute right-1/9 top-224"></div>
         <div className="font-space text-[#FDF5E6] flex flex-col gap-y-6 py-16 text-lg">
           <p>
             Sou um desenvolvedor front-end focado em criar interfaces modernas,
