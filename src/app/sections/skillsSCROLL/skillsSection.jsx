@@ -1,60 +1,130 @@
-import Cards from "@/app/components/skillsComponents/cards";
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
+import { Inter, Bodoni_Moda } from "next/font/google";
+import Image from "next/image";
+import Js from "../../assets/jsicon.png";
+import Html from "../../assets/htmlicon.png";
+import Css from "../../assets/cssicon.png";
+import Next from "../../assets/nexticon.png";
 import ReactIcon from "../../assets/reacticon.png";
-import JsIcon from "../../assets/jsicon.png";
-import HtmlIcon from "../../assets/htmlicon.png";
-import CssIcon from "../../assets/cssicon.png";
-import Title from "@/app/components/skillsComponents/title";
-import NextIcon from "../../assets/nexticon.png";
-import TailwindIcon from "../../assets/tailwindicon.png";
-import Button from "@/app/components/skillsComponents/button";
-import SkillCard from "../../components/skillsComponents/skillsCard";
+import tailwind from "../../assets/tailwindicon.png";
+
+const inter = Inter({ subsets: ["latin"], weight: ["900", "400"] });
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: "italic",
+});
+
+const skills = [
+  {
+    category: "Core",
+    items: [
+      { name: "Javascript", icon: Js },
+      { name: "HTML", icon: Html },
+      { name: "CSS", icon: Css },
+    ],
+  },
+  {
+    category: "Frameworks",
+    items: [
+      { name: "Next.js", icon: Next },
+      { name: "React", icon: ReactIcon },
+      { name: "Tailwind", icon: tailwind },
+    ],
+  },
+];
 
 const SkillsSection = () => {
-  const mySkills = [
-    {
-      name: "HTML",
-      icon: <div className="w-12 h-12 bg-orange-500/20 rounded-lg" />,
-    },
-    {
-      name: "CSS",
-      icon: <div className="w-12 h-12 bg-blue-500/20 rounded-lg" />,
-    },
-    {
-      name: "JavaScript",
-      icon: <div className="w-12 h-12 bg-yellow-500/20 rounded-lg" />,
-    },
-    {
-      name: "React",
-      icon: <div className="w-12 h-12 bg-cyan-500/20 rounded-lg" />,
-    },
-    {
-      name: "Next.js",
-      icon: <div className="w-12 h-12 bg-slate-500/20 rounded-lg" />,
-    },
-    {
-      name: "Tailwind",
-      icon: <div className="w-12 h-12 bg-teal-500/20 rounded-lg" />,
-    },
-  ];
-
   return (
-    <section className="min-h-[80vh] w-full bg-[#020617] py-24 px-6 relative overflow-hidden flex flex-col items-center justify-center">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/10 blur-[120px] rounded-full pointer-events-none" />
+    <section className="relative h-screen w-full bg-[#EBEBEB] flex flex-col items-center justify-center overflow-hidden selection:bg-black selection:text-white px-6">
+      <div className="relative z-10 w-full max-w-5xl flex flex-col items-center">
+        <div className="relative flex flex-col items-center mb-8 md:mb-16 text-center">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className={`${bodoni.className} text-3xl md:text-6xl mb-[-8px] md:mb-[-25px] text-zinc-900 z-10`}
+          >
+            minhas
+          </motion.span>
 
-      <div className="relative mb-20 text-center">
-        <h2 className="text-6xl md:text-7xl font-black text-white/5 uppercase tracking-tighter absolute -top-10 left-1/2 -translate-x-1/2 select-none">
-          Abilities
-        </h2>
-        <h3 className="text-4xl font-bold text-white relative z-10">
-          Minhas <span className="text-cyan-400">Skills</span>
-        </h3>
-        <div className="h-1 w-12 bg-cyan-500 mx-auto mt-4 rounded-full" />
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className={`${inter.className} text-[15vw] md:text-[10rem] font-[900] leading-none tracking-tighter text-[#1A1A1A] uppercase`}
+          >
+            SKILLS
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 w-full">
+          {skills.map((group, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: idx === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="flex flex-col items-center md:items-start"
+            >
+              <div className="flex flex-col items-center md:items-start mb-4">
+                <div className="w-[1px] h-8 bg-black/20" />
+                <div className="w-1.5 h-1.5 bg-black rounded-full -mt-1" />
+                <h3
+                  className={`${inter.className} mt-2 text-[9px] tracking-[0.4em] uppercase font-black text-zinc-400`}
+                >
+                  {group.category}
+                </h3>
+              </div>
+
+              <ul className="space-y-4 md:space-y-6">
+                {group.items.map((skill) => (
+                  <li
+                    key={skill.name}
+                    className="flex items-center gap-3 group justify-center md:justify-start"
+                  >
+                    <div className="w-6 md:w-10">
+                      <Image
+                        src={skill.icon}
+                        alt={skill.name}
+                        width={40}
+                        height={40}
+                        className="grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                    <span
+                      className={`${inter.className} text-2xl md:text-5xl font-[900] text-[#1A1A1A] uppercase tracking-tighter group-hover:text-blue-600 transition-colors`}
+                    >
+                      {skill.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div className="mt-12 md:mt-16 flex flex-col items-center group cursor-pointer">
+          <div className="w-[1px] h-10 bg-black/30 group-hover:h-14 transition-all" />
+          <a
+            href="/all-skills"
+            className={`${bodoni.className} text-xl md:text-3xl mt-4 text-zinc-800 hover:italic transition-all`}
+          >
+            ver stack completa
+          </a>
+        </motion.div>
       </div>
 
-      <button className="mt-16 px-8 py-3 rounded-full bg-transparent border border-white/20 text-white font-bold text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300">
-        View All Stack
-      </button>
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.08] mix-blend-multiply"
+        style={{
+          backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')`,
+        }}
+      />
+      <div className="absolute bottom-6 opacity-30">
+        <p className={`${inter.className} text-[8px] tracking-[1em] uppercase`}>
+          Stack 2026
+        </p>
+      </div>
     </section>
   );
 };

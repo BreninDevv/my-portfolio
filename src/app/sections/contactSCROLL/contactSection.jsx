@@ -1,17 +1,33 @@
+"use client";
 import React from "react";
+import { Inter, Bodoni_Moda } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: "italic",
+});
 
 const ContactSection = () => {
   return (
-    <footer className="w-full bg-[#0f172a] text-slate-300 pt-20 pb-10 px-6">
+    <footer
+      className={`w-full bg-[#1c2230] text-slate-300 pt-20 pb-10 px-6 ${inter.className}`}
+    >
       <div className="max-w-6xl mx-auto">
-        {/* Área Principal de Contato */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pb-16 border-b border-slate-800">
-          {/* Lado Esquerdo: Chamada para Ação */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pb-16 border-b border-white/10 items-center">
           <div className="flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter">
-              Vamos criar algo <span className="text-blue-500">incrível?</span>
+            <span
+              className={`${bodoni.className} text-blue-500 text-3xl md:text-4xl mb-[-10px]`}
+            >
+              vamos criar
+            </span>
+            <h2 className="text-5xl md:text-7xl font-[900] text-white mb-6 tracking-tighter uppercase leading-none">
+              Algo <span className="text-blue-500">Incrível?</span>
             </h2>
-            <p className="text-slate-400 text-lg mb-8 max-w-md">
+            <p
+              className={`${bodoni.className} text-zinc-400 text-xl mb-8 max-w-md italic`}
+            >
               Estou sempre aberto a novos projetos, colaborações ou apenas para
               trocar uma ideia sobre tecnologia.
             </p>
@@ -21,7 +37,7 @@ const ContactSection = () => {
                 href="mailto:seuemail@gmail.com"
                 className="flex items-center gap-4 group w-fit"
               >
-                <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -37,65 +53,79 @@ const ContactSection = () => {
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
                 </div>
-                <span className="text-white font-medium group-hover:text-blue-400 transition-colors">
-                  seuemail@gmail.com
+                <span className="text-white text-sm font-black uppercase tracking-widest group-hover:text-blue-400 transition-colors">
+                  meuemail@gmail.com
                 </span>
               </a>
             </div>
           </div>
 
-          {/* Lado Direito: Apenas os links solicitados */}
-          <div className="bg-slate-800/30 p-8 rounded-3xl border border-slate-700/50 flex flex-col justify-center">
-            <h3 className="text-white font-bold mb-6 uppercase tracking-widest text-sm">
-              Redes Sociais
+          <div className="bg-white/5 py-30 px-10 rounded-[2rem] border border-white/5 flex flex-col justify-center relative overflow-hidden group h-50">
+            <h3 className="text-zinc-500 font-black mb-8 uppercase tracking-[0.4em] text-[10px]">
+              Contato _
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
               <a
                 href="https://linkedin.com/in/seu-usuario"
                 target="_blank"
-                className="p-4 rounded-xl bg-slate-900/50 hover:bg-blue-600 hover:text-white transition-all flex items-center justify-center gap-3 border border-transparent hover:border-blue-400"
+                className="p-5 rounded-2xl bg-[#0A0F1A] hover:bg-blue-600 text-white transition-all duration-500 flex items-center justify-between border border-white/5 hover:border-blue-400 group/link"
               >
-                <span className="font-semibold text-sm italic">LinkedIn</span>
+                <span className="font-black text-[10px] uppercase tracking-widest">
+                  LinkedIn
+                </span>
+                <span className="group-hover/link:translate-x-1 transition-transform">
+                  ↗
+                </span>
               </a>
               <a
                 href="https://github.com/seu-usuario"
                 target="_blank"
-                className="p-4 rounded-xl bg-slate-900/50 hover:bg-slate-700 hover:text-white transition-all flex items-center justify-center gap-3 border border-transparent hover:border-slate-500"
+                className="p-5 rounded-2xl bg-[#0A0F1A] hover:bg-zinc-800 text-white transition-all duration-500 flex items-center justify-between border border-white/5 hover:border-zinc-500 group/link"
               >
-                <span className="font-semibold text-sm italic">GitHub</span>
+                <span className="font-black text-[10px] uppercase tracking-widest">
+                  GitHub
+                </span>
+                <span className="group-hover/link:translate-x-1 transition-transform">
+                  ↗
+                </span>
               </a>
+            </div>
+            <div className="absolute left-20 -bottom-4 text-white/[0.02] text-9xl font-black italic select-none">
+              Social
             </div>
           </div>
         </div>
 
-        {/* Rodapé Inferior */}
-        <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start">
-            <span className="text-white font-black text-xl tracking-tighter mb-1">
-              SEU<span className="text-blue-500">NOME</span>
+            <span className="text-white font-[900] text-2xl tracking-tighter mb-1 uppercase">
+              BRENO<span className="text-blue-500">HENRIQUE</span>
             </span>
-            <p className="text-slate-500 text-xs">
-              © 2026 Todos os direitos reservados.
+            <p className="text-zinc-600 text-[9px] uppercase tracking-[0.3em]">
+              © 2026 Crafted with precision
             </p>
           </div>
 
-          <nav className="flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
-            <a href="#" className="hover:text-white transition-colors">
+          <nav className="flex gap-8 text-[9px] font-[900] uppercase tracking-[0.3em] text-zinc-500">
+            <a href="#" className="hover:text-blue-500 transition-colors">
               Home
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-blue-500 transition-colors">
               Projetos
             </a>
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="#" className="hover:text-blue-500 transition-colors">
               Sobre
+            </a>
+            <a href="#" className="hover:text-blue-500 transition-colors">
+              Skills
             </a>
           </nav>
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300 group"
+            className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-500 group"
           >
-            <span className="group-hover:-translate-y-1 transition-transform">
+            <span className="group-hover:-translate-y-1 transition-transform text-lg">
               ↑
             </span>
           </button>

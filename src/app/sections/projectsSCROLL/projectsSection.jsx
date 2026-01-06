@@ -1,65 +1,84 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Inter, Bodoni_Moda } from "next/font/google";
 import ProjectCard from "../../components/projectsComponents/projectCard";
+
+const inter = Inter({ subsets: ["latin"], weight: ["900", "400"] });
+const bodoni = Bodoni_Moda({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: "italic",
+});
 
 const ProjectsSection = () => {
   const projectsData = [
     {
       id: 1,
       title: "E-commerce Pro",
-      description:
-        "Plataforma completa de vendas online com checkout integrado.",
+      description: "Plataforma de alta performance com checkout otimizado.",
       link: "#",
       github: "#",
-      icons: <div className="w-5 h-5 bg-blue-500/20 rounded" />,
     },
     {
       id: 2,
       title: "Task Manager",
-      description: "App de gerenciamento de tarefas com foco em produtividade.",
+      description: "Gerenciamento de fluxo de trabalho para equipes remotas.",
       link: "#",
       github: "#",
-      icons: <div className="w-5 h-5 bg-purple-500/20 rounded" />,
     },
     {
       id: 3,
       title: "Weather App",
-      description: "Consulta de previsão do tempo em tempo real via API.",
+      description: "Visualização de dados meteorológicos em tempo real.",
       link: "#",
       github: "#",
-      icons: <div className="w-5 h-5 bg-cyan-500/20 rounded" />,
     },
   ];
 
   return (
-    <section className="h-screen w-full bg-[#050811] flex flex-col justify-center px-6 md:px-20 relative">
-      <div className="max-w-7xl mx-auto w-full">
-        {/* Cabeçalho */}
-        <div className="flex items-end justify-between mb-12">
-          <div>
-            <span className="text-blue-500 text-[10px] font-black uppercase tracking-[0.4em] mb-2 block">
-              Portfólio
+    <section className="relative h-screen w-full bg-[#0A0F1A] flex flex-col px-6 md:px-20 overflow-hidden">
+      <div className="max-w-7xl w-full z-10 mx-auto pt-10 md:pt-20 flex flex-col h-full">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span
+              className={`${bodoni.className} text-2xl md:text-5xl text-blue-500 block mb-[-10px] md:mb-[-22px]`}
+            >
+              projetos
             </span>
-            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase">
-              Projetos
+            <h2
+              className={`${inter.className} text-[13vw] md:text-[8rem] font-[900] text-white leading-none uppercase tracking-tighter`}
+            >
+              Selecionados
             </h2>
-          </div>
+          </motion.div>
 
           <Link
             href="/projects"
-            className="text-slate-500 hover:text-white text-[10px] font-black uppercase tracking-widest border-b border-slate-800 pb-1 transition-all"
+            className={`${inter.className} hidden md:block text-[9px] font-black uppercase tracking-[0.5em] text-zinc-600 hover:text-white border-b border-zinc-800 pb-2 mb-4 transition-all`}
           >
-            Ver tudo
+            Ver catálogo completo
           </Link>
         </div>
 
-        {/* Grid ajustado para caber no h-screen */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-12 flex-1 pb-10">
           {projectsData.map((project) => (
             <ProjectCard key={project.id} {...project} />
           ))}
         </div>
       </div>
+
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        style={{
+          backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')`,
+        }}
+      />
     </section>
   );
 };
