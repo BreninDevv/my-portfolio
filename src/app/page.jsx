@@ -1,7 +1,7 @@
 "use client";
 
 import "./globals.css";
-import AboutSection from "./sections/aboutSCROLL/aboutSection";
+import Header from "./components/header/header";
 import ContactSection from "./sections/contactSCROLL/contactSection";
 import HeroSection from "./sections/heroSCROLL/heroSection";
 import ProjectsSection from "./sections/projectsSCROLL/projectsSection";
@@ -11,6 +11,7 @@ export default function Page() {
   return (
     <>
       <main>
+        <Header />
         <HeroSection />
         <SkillsSection />
         <ProjectsSection />

@@ -38,7 +38,7 @@ const ProjectsSection = () => {
     {
       title: "Dashboard Finance",
       description:
-        "Gestão inteligente de ativos financeiros com análise de dados detalhada.",
+        "Dashboard financeiro com login e autenticação totalmente funcional.",
       image: DashboardProject,
       featured: true,
       tech: [
@@ -52,8 +52,8 @@ const ProjectsSection = () => {
       size: "md:col-span-2",
     },
     {
-      title: "E-commerce Pro",
-      description: "Plataforma moderna de vendas com checkout integrado.",
+      title: "Mini E-commerce",
+      description: "Mini E-commerce com funcionalidades de modal e cart.",
       image: Ecommerce,
       tech: [
         { name: "React", icon: Reacticon },
@@ -77,9 +77,8 @@ const ProjectsSection = () => {
       size: "md:col-span-1",
     },
     {
-      title: "Landing Page High-End",
-      description:
-        "Interface de alta conversão focada em experiência do usuário.",
+      title: "Landing Page Responsiva",
+      description: "Interface com objetivo em responsividade",
       image: LandingPage,
       tech: [
         { name: "HTML5", icon: Htmlicon },
@@ -94,10 +93,10 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen w-full bg-[#0A0F1A] py-24 px-6 md:px-12 lg:px-20 selection:bg-blue-500 selection:text-white overflow-hidden"
+      className="relative min-h-screen w-full bg-[#050510] py-24 px-6 md:px-12 lg:px-20 selection:bg-blue-500 selection:text-white overflow-hidden"
     >
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-zinc-900/50 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-10">

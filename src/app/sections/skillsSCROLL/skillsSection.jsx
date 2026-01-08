@@ -21,7 +21,7 @@ const bodoni = Bodoni_Moda({
 
 const skills = [
   {
-    category: "CORE",
+    category: "BASE",
     items: [
       { name: "JAVASCRIPT", icon: Js },
       { name: "HTML", icon: Html },
@@ -39,7 +39,7 @@ const skills = [
 ];
 
 const AboutSkillsSection = () => {
-  const bgTextAbout = "FRONT-END FRONT-END FRONT-END FRONT-END FRONT-END";
+  const bgTextAbout = "ABOUT ME ABOUT ME ABOUT ME ABOUT ME";
   const bgTextSkills =
     "MINHAS SKILLS MINHAS SKILLS MINHAS SKILLS MINHAS SKILLS";
 
@@ -51,10 +51,10 @@ const AboutSkillsSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-[#EBEBEB] flex flex-col items-center py-12 md:py-24 selection:bg-black selection:text-white overflow-hidden">
+    <section className="relative min-h-screen w-full bg-[#EBEBEB] flex flex-col items-center pt-24 md:pt-48 pb-12 md:pb-24 selection:bg-black selection:text-white overflow-hidden">
       <div
         id="about"
-        className="relative z-10 w-full max-w-7xl flex flex-col items-center mb-32 md:mb-60"
+        className="relative z-10 w-full max-w-7xl flex flex-col items-center mb-20 md:mb-32"
       >
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200vw] flex flex-col gap-2 md:gap-4 opacity-[0.03] select-none pointer-events-none uppercase font-black italic">
           {[...Array(4)].map((_, i) => (
@@ -88,7 +88,7 @@ const AboutSkillsSection = () => {
           transition={{ delay: 0.2 }}
           className="relative z-10 max-w-5xl text-center px-6"
         >
-          <div className="w-32 h-32 md:w-64 md:h-64 border-[2px] md:border-[3px] border-black rounded-full mx-auto mb-8 md:mb-10 bg-zinc-200 overflow-hidden shadow-2xl" />
+          <div className="hover:scale-110 duration-300 cursor-pointer w-32 h-32 md:w-64 md:h-64 border-[2px] md:border-[3px] border-black rounded-full mx-auto mb-8 md:mb-10 bg-zinc-200 overflow-hidden shadow-2xl" />
           <p
             className={`${inter.className} text-lg md:text-3xl lg:text-4xl font-medium text-zinc-800 tracking-tight leading-tight`}
           >
@@ -113,7 +113,7 @@ const AboutSkillsSection = () => {
               className={`${inter.className} text-[10px] md:text-xs text-zinc-400 mt-2 uppercase leading-relaxed max-w-xs`}
             >
               Evolução constante através do estudo diário, aprofundamento em JS,
-              React e Next.js.
+              React e Next.js, foco em se tornar full stack.
             </p>
           </motion.div>
           <motion.div
@@ -134,6 +134,17 @@ const AboutSkillsSection = () => {
             </p>
           </motion.div>
         </div>
+
+        <div className="w-full flex flex-col items-center mt-16 md:mt-24">
+          <div className="w-[1px] h-12 md:h-20 bg-black/20" />
+          <a
+            href="#full-about"
+            className={`${bodoni.className} text-xl md:text-3xl mt-4 italic text-zinc-800 hover:tracking-widest transition-all duration-500`}
+          >
+            Mais sobre mim
+          </a>
+        </div>
+        {/* ------------------------------------------------------ */}
       </div>
 
       <div className="relative w-full py-16 md:py-32 opacity-[0.03] select-none pointer-events-none uppercase font-black italic overflow-hidden">
@@ -220,13 +231,12 @@ const AboutSkillsSection = () => {
 
           <div className="w-full lg:w-5/12 flex relative pl-0 lg:pl-10 xl:pl-16 pt-10 lg:pt-20">
             <div className="hidden lg:block absolute left-0 top-0 w-[2px] h-full bg-black/10" />
-
             <div className="flex flex-col w-full justify-around py-10 gap-12 md:gap-16 lg:gap-24">
               {[
-                { title: "INTERFACE DESIGN", align: "left" },
-                { title: "CLEAN CODE", align: "right" },
-                { title: "RESPONSIVE UI", align: "left" },
-                { title: "USER EXPERIENCE", align: "right" },
+                { title: "Interfaces Modernas", align: "left" },
+                { title: "Código Escalável", align: "right" },
+                { title: "Responsividade", align: "left" },
+                { title: "Usabilidade", align: "right" },
               ].map((item, i) => (
                 <motion.div
                   key={item.title}
