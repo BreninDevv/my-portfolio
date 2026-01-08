@@ -12,7 +12,6 @@ export default function Page() {
     <>
       <main>
         <HeroSection />
-        <AboutSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />

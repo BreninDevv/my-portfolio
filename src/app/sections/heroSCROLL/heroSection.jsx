@@ -15,7 +15,10 @@ const bodoni = Bodoni_Moda({
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen w-full bg-[#0A0F1A] flex flex-col items-center justify-center overflow-hidden px-4">
+    <section
+      id="home"
+      className="relative min-h-screen w-full bg-[#111e38] flex flex-col items-center justify-center overflow-hidden px-4"
+    >
       <div className="flex flex-col items-center z-10 text-center pb-10 md:pb-30">
         <motion.span
           initial={{ opacity: 0 }}

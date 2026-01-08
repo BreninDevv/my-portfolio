@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Inter, Bodoni_Moda } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "900"] });
@@ -10,6 +10,15 @@ const bodoni = Bodoni_Moda({
 });
 
 const ContactSection = () => {
+  const [copied, setCopied] = useState(false);
+  const email = "breno.devv.contato@gmail.com";
+
+  const handleCopyEmail = (e) => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <footer
       className={`w-full bg-[#1c2230] text-slate-300 pt-20 pb-10 px-6 ${inter.className}`}
@@ -33,34 +42,43 @@ const ContactSection = () => {
             </p>
 
             <div className="space-y-4">
-              <a
-                href="mailto:seuemail@gmail.com"
-                className="flex items-center gap-4 group w-fit"
-              >
-                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                </div>
-                <span className="text-white text-sm font-black uppercase tracking-widest group-hover:text-blue-400 transition-colors">
-                  meuemail@gmail.com
-                </span>
-              </a>
+              <div className="flex flex-col gap-2">
+                <a
+                  href={`mailto:${email}`}
+                  onClick={handleCopyEmail}
+                  className="xl:flex lg:flex items-center gap-4 group w-fit cursor-pointer"
+                  title="Clique para enviar e-mail ou copiar"
+                >
+                  <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-500 text-white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect width="20" height="16" x="2" y="4" rx="2" />
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                    </svg>
+                  </div>
+                  <span className="text-white text-sm font-black tracking-widest group-hover:text-blue-400 transition-colors lowercase">
+                    {email}
+                  </span>
+                </a>
+                <p className="text-[10px] font-bold tracking-[0.2em] text-blue-500 uppercase h-4">
+                  {copied
+                    ? "✓ E-mail copiado para a área de transferência"
+                    : ""}
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="bg-white/5 py-30 px-10 rounded-[2rem] border border-white/5 flex flex-col justify-center relative overflow-hidden group h-50">
+          <div className="bg-white/5 py-16 md:py-24 px-10 rounded-[2rem] border border-white/5 flex flex-col justify-center relative overflow-hidden group">
             <h3 className="text-zinc-500 font-black mb-8 uppercase tracking-[0.4em] text-[10px]">
               Contato _
             </h3>
@@ -68,6 +86,7 @@ const ContactSection = () => {
               <a
                 href="https://linkedin.com/in/seu-usuario"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-[#0A0F1A] hover:bg-blue-600 text-white transition-all duration-500 flex items-center justify-between border border-white/5 hover:border-blue-400 group/link"
               >
                 <span className="font-black text-[10px] uppercase tracking-widest">
@@ -78,8 +97,9 @@ const ContactSection = () => {
                 </span>
               </a>
               <a
-                href="https://github.com/seu-usuario"
+                href="https://github.com/BreninDevv"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-[#0A0F1A] hover:bg-zinc-800 text-white transition-all duration-500 flex items-center justify-between border border-white/5 hover:border-zinc-500 group/link"
               >
                 <span className="font-black text-[10px] uppercase tracking-widest">
@@ -107,16 +127,19 @@ const ContactSection = () => {
           </div>
 
           <nav className="flex gap-8 text-[9px] font-[900] uppercase tracking-[0.3em] text-zinc-500">
-            <a href="#" className="hover:text-blue-500 transition-colors">
+            <a href="#home" className="hover:text-blue-500 transition-colors">
               Home
             </a>
-            <a href="#" className="hover:text-blue-500 transition-colors">
+            <a
+              href="#projects"
+              className="hover:text-blue-500 transition-colors"
+            >
               Projetos
             </a>
-            <a href="#" className="hover:text-blue-500 transition-colors">
+            <a href="#about" className="hover:text-blue-500 transition-colors">
               Sobre
             </a>
-            <a href="#" className="hover:text-blue-500 transition-colors">
+            <a href="#skills" className="hover:text-blue-500 transition-colors">
               Skills
             </a>
           </nav>
