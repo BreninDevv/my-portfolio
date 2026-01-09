@@ -13,20 +13,17 @@ const inter = Inter({ subsets: ["latin"], weight: ["900", "700"] });
 const Header = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [copied, setCopied] = useState(false); // Estado opcional para feedback visual
+  const [copied, setCopied] = useState(false);
   const { scrollY } = useScroll();
 
   const email = "breno.devv.contato@gmail.com";
 
   const handleContact = () => {
-    // Copia o e-mail para a área de transferência
     navigator.clipboard.writeText(email);
 
-    // Feedback visual rápido (opcional)
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
 
-    // Abre o link de e-mail
     window.location.href = `mailto:${email}`;
   };
 
@@ -60,7 +57,6 @@ const Header = () => {
         className="fixed top-0 left-1/2 z-[1000] w-[95%] max-w-[1200px]"
       >
         <div className="bg-white/85 backdrop-blur-xl border border-black/10 shadow-[0_10px_40px_rgba(0,0,0,0.08)] rounded-full px-4 md:px-8 py-3 flex justify-between items-center transition-all">
-          {/* LOGO */}
           <div className="flex-1">
             <span
               className={`${inter.className} text-sm md:text-lg font-black tracking-tighter text-black uppercase`}
@@ -69,7 +65,6 @@ const Header = () => {
             </span>
           </div>
 
-          {/* NAV CENTRAL */}
           <nav className="hidden md:flex items-center gap-6 lg:gap-10">
             {menuItems.map((item) => (
               <a
@@ -82,16 +77,14 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* BOTÃO CTA */}
           <div className="flex-1 flex justify-end items-center">
             <button
               onClick={handleContact}
-              className={`${inter.className} hidden sm:block text-[10px] md:text-xs font-bold uppercase tracking-widest bg-black text-white px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors shadow-lg shadow-black/10`}
+              className={`${inter.className} cursor-pointer hidden sm:block text-[10px] md:text-xs font-bold uppercase tracking-widest bg-black text-white px-5 py-2.5 rounded-full hover:bg-zinc-800 transition-colors shadow-lg shadow-black/10`}
             >
               {copied ? "E-MAIL COPIADO!" : "Contato"}
             </button>
 
-            {/* BOTÃO HAMBÚRGUER */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden ml-4 p-2 text-black hover:bg-black/5 rounded-full transition-colors"
@@ -114,7 +107,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* MENU MOBILE */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div

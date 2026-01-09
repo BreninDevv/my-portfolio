@@ -138,13 +138,12 @@ const AboutSkillsSection = () => {
         <div className="w-full flex flex-col items-center mt-16 md:mt-24">
           <div className="w-[1px] h-12 md:h-20 bg-black/20" />
           <a
-            href="#full-about"
+            href="/about"
             className={`${bodoni.className} text-xl md:text-3xl mt-4 italic text-zinc-800 hover:tracking-widest transition-all duration-500`}
           >
             Mais sobre mim
           </a>
         </div>
-        {/* ------------------------------------------------------ */}
       </div>
 
       <div className="relative w-full py-16 md:py-32 opacity-[0.03] select-none pointer-events-none uppercase font-black italic overflow-hidden">
@@ -276,7 +275,7 @@ const AboutSkillsSection = () => {
         <div className="w-full flex flex-col items-center mt-20 md:mt-40">
           <div className="w-[1px] h-12 md:h-20 bg-black/20" />
           <a
-            href="#"
+            href="/skills"
             className={`${bodoni.className} text-xl md:text-3xl mt-4 italic text-zinc-800 hover:tracking-widest transition-all duration-500`}
           >
             ver stack completa

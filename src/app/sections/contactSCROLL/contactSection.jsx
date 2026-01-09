@@ -21,6 +21,7 @@ const ContactSection = () => {
 
   return (
     <footer
+      id="contact"
       className={`w-full bg-[#1c2230] text-slate-300 pt-20 pb-10 px-6 ${inter.className}`}
     >
       <div className="max-w-6xl mx-auto">
