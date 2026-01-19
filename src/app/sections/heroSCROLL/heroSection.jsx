@@ -25,7 +25,7 @@ const HeroSection = () => {
           animate={{ opacity: 0.8 }}
           className={`${bodoni.className} text-3xl sm:text-4xl md:text-6xl mb-[-10px] sm:mb-[-20px] md:mb-[-40px] pb-6 md:pb-10 text-blue-600`}
         >
-          portfólio
+          frontend
         </motion.span>
 
         <motion.h1
@@ -50,7 +50,13 @@ const HeroSection = () => {
           </div>
           <div className="w-[1px] bg-gray-400 h-6 sm:h-10"></div>
           <div className="cursor-pointer hover:scale-110 md:hover:scale-120 duration-300 w-8 sm:w-12 md:w-[50px]">
-            <Image src={LinkedinLogo} alt="Linkedin Logo" layout="responsive" />
+            <a href="https://www.linkedin.com/in/brenodev-henrique/">
+              <Image
+                src={LinkedinLogo}
+                alt="Linkedin Logo"
+                layout="responsive"
+              />
+            </a>
           </div>
         </div>
       </div>

@@ -85,7 +85,7 @@ const ContactSection = () => {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
               <a
-                href="https://linkedin.com/in/seu-usuario"
+                href="https://www.linkedin.com/in/brenodev-henrique/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-5 rounded-2xl bg-[#0A0F1A] hover:bg-blue-600 text-white transition-all duration-500 flex items-center justify-between border border-white/5 hover:border-blue-400 group/link"

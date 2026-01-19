@@ -15,12 +15,14 @@ import Ecommerce from "../assets/ecommerce.png";
 import LandingPage from "../assets/landingpage.png";
 import TodoList from "../assets/todolist.png";
 import MyPortfolio from "../assets/myportfolio.png";
+import AngularProject from "../assets/projetoAngular.png";
 import Nodeicon from "../assets/nodeicon.png";
 import Mongoicon from "../assets/mongoicon.png";
 import Htmlicon from "../assets/htmlicon.png";
 import Cssicon from "../assets/cssicon.png";
 import Jsicon from "../assets/jsicon.png";
 import Reacticon from "../assets/reacticon.png";
+import AngularIcon from "../assets/angularicon.png";
 
 const inter = Inter({ subsets: ["latin"], weight: ["900", "400", "700"] });
 const bodoni = Bodoni_Moda({
@@ -74,7 +76,7 @@ const ProjectsPage = () => {
     {
       id: "05",
       title: "Todo List React",
-      type: "Estudo",
+      type: "study",
       description:
         "Gerenciador de tarefas para praticar conceitos de hooks e persistência de dados local.",
       image: TodoList,
@@ -83,6 +85,16 @@ const ProjectsPage = () => {
     },
     {
       id: "06",
+      title: "Nutrition Angular",
+      type: "improvement",
+      description:
+        "Este projeto, é focado no estudo do framework angular, conceitos e fundamentos.",
+      image: AngularProject,
+      link: "https://angular-project-nutrition.vercel.app",
+      tech: [AngularIcon, TailwindIcon, Nodeicon],
+    },
+    {
+      id: "07",
       title: "My Portfólio",
       type: "Concept Design",
       description:
