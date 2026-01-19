@@ -2,6 +2,8 @@
 
 Olá! Este é o código-fonte do meu portfólio pessoal, onde demonstro minhas habilidades em desenvolvimento Front-End, arquitetura de aplicações e design responsivo.
 
+DEPLOY: https://my-portfolio-breno.vercel.app
+
 ## 💡 Sobre o Projeto
 
 Este portfólio foi construído seguindo o **Modelo Híbrido** de arquitetura, garantindo a fluidez de uma SPA (Single Page Application) na Home e a performance/SEO de uma MPA (Multi-Page Application) nas rotas dedicadas (`/projects`, `/about`...).
