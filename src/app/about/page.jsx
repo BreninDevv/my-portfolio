@@ -3,6 +3,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Inter, Bodoni_Moda } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
+import FotoBreno from "../assets/brenoFoto.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -66,7 +68,12 @@ const AboutMePage = () => {
         <motion.div {...fadeInUp} className="lg:col-span-5 flex flex-col gap-8">
           <div className="w-full aspect-[4/5] bg-zinc-300 border-[3px] border-black rounded-2xl overflow-hidden shadow-2xl relative">
             <div className="absolute inset-0 flex items-center justify-center text-zinc-400 font-bold uppercase tracking-widest italic text-xs">
-              Sua Foto Aqui
+              <Image
+                src={FotoBreno}
+                alt="Foto"
+                width={300}
+                className="rounded-xl"
+              />
             </div>
           </div>
 

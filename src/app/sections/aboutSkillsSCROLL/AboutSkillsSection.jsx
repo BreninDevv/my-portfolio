@@ -11,6 +11,7 @@ import Css from "../../assets/cssicon.png";
 import Next from "../../assets/nexticon.png";
 import ReactIcon from "../../assets/reacticon.png";
 import tailwind from "../../assets/tailwindicon.png";
+import FotoBreno from "../../assets/brenoFoto.png";
 
 const inter = Inter({ subsets: ["latin"], weight: ["900", "400", "500"] });
 const bodoni = Bodoni_Moda({
@@ -88,7 +89,10 @@ const AboutSkillsSection = () => {
           transition={{ delay: 0.2 }}
           className="relative z-10 max-w-5xl text-center px-6"
         >
-          <div className="hover:scale-110 duration-300 cursor-pointer w-32 h-32 md:w-64 md:h-64 border-[2px] md:border-[3px] border-black rounded-full mx-auto mb-8 md:mb-10 bg-zinc-200 overflow-hidden shadow-2xl" />
+          <div className="hover:scale-110 duration-300 cursor-pointer w-32 h-32 md:w-64 md:h-64 border-[2px] md:border-[3px] border-black rounded-full mx-auto mb-8 md:mb-10 bg-zinc-200 overflow-hidden shadow-2xl">
+            <Image src={FotoBreno} alt="Foto" />
+          </div>
+
           <p
             className={`${inter.className} text-lg md:text-3xl lg:text-4xl font-medium text-zinc-800 tracking-tight leading-tight`}
           >

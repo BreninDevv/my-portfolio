@@ -25,7 +25,7 @@ const HeroSection = () => {
           animate={{ opacity: 0.8 }}
           className={`${bodoni.className} text-3xl sm:text-4xl md:text-6xl mb-[-10px] sm:mb-[-20px] md:mb-[-40px] pb-6 md:pb-10 text-blue-600`}
         >
-          frontend
+          portfólio
         </motion.span>
 
         <motion.h1
